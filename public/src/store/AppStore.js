@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { showNotification } from "../utils/utils";
 
 const AppStore = () => {
   const [transactions, setTransactions] = useState([]);
@@ -11,10 +12,10 @@ const AppStore = () => {
     action: "http://localhost:3333/upload",
     onChange(info) {
       if (info.file.status === "done") {
-        console.log("Arquivo enviado com sucesso");
+        showNotification("success", "", "Upload successfully.");
         getTransactions();
       } else if (info.file.status === "error") {
-        console.error("Erro ao enviar o arquivo");
+        showNotification("error", "", "Error when uploading the file.");
       }
     },
   };
@@ -26,7 +27,7 @@ const AppStore = () => {
       setTransactions(data);
       setSum(sumValues(data));
     } catch (error) {
-      console.error("Erro ao buscar as transações", error);
+      showNotification("error", "", "Error when loading transactions.");
     }
   }
 

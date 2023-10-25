@@ -1,4 +1,5 @@
 import { format } from "date-fns";
+import { message } from "antd";
 
 export const formatDate = (date) => {
   if (date) {
@@ -25,4 +26,16 @@ export const formatValueInReal = (valueInCentavos) => {
 export const getByKey = (list, value) => {
   const found = list.find((i) => i["value"] === value);
   return found ? found["text"] : "-";
+};
+
+export const showNotification = (type, title, description) => {
+  const msg = `${title ? title + "! " : ""}${description ? description : ""}`;
+  switch (type) {
+    case "error":
+      message.error(msg);
+      break;
+    case "success":
+      message.success(msg);
+      break;
+  }
 };
