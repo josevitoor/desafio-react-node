@@ -10,4 +10,6 @@ Desafio em React e Node JS
 
 - integrating back and front: Creating a React app and integrating the backend with the frontend using Axios. Some Ant Design components were used for the form. Additionally, some modifications were made to the upload route to enable parsing of the text document.
 
-bringing the amount: Bringing the total value of all transactions made and adjusting some architectural points for better development.
+- bringing the amount: Bringing the total value of all transactions made and adjusting some architectural points for better development.
+
+- feedback messages: Bringing some user feedback messages and reorganizing some folders.
