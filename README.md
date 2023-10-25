@@ -4,4 +4,6 @@
 
 ## Commits
 
-- initial api setup: Initializing the project using the MVC design pattern, initially creating an 'api' folder where the backend implementation will take place. With this in mind, I performed the initial installation of the key tools I would be using for the backend: node, nodemon, express, Docker configuration, and the beginning of the PostgreSQL database setup.
+- initial api setup: Initializing the project by creating an 'api' folder where the Node.js backend implementation will take place. Additionally, I performed the initial installation of the key tools I would use for this: node, nodemon, express, Docker configuration, and the beginning of the PostgreSQL database setup.
+
+- using prisma and set routes: Using Prisma for PostgreSQL database implementation and creating routes for transaction listing and transaction upload
