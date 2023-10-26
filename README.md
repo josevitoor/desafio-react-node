@@ -52,7 +52,9 @@ This will start the Express server and allow the back-end to receive HTTP reques
 docker-compose up -d
 ```
 
-The PostgreSQL database will be accessible on port 5432 3. n the `api`, folder, run the following command to start Prisma Studio:
+The PostgreSQL database will be accessible on port 5432.
+
+3. In the `api`, folder, run the following command to start Prisma Studio:
 
 ```bash
 npx prisma studio
