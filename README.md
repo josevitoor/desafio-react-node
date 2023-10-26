@@ -46,16 +46,6 @@ npm install
 
 ### Initialization
 
-- **Back-end**
-
-1. To start the back-end, go to the `api` folder and run:
-
-```bash
-npm run dev
-```
-
-This will start the Express server and allow the back-end to receive HTTP requests.
-
 - **Database**
 
 1. Ensure that Docker is running.
@@ -74,6 +64,16 @@ npx prisma studio
 ```
 
 Prisma Studio will open a graphical interface that allows you to view, edit, and manage database data, if preferred.
+
+- **Back-end**
+
+1. To start the back-end, go to the `api` folder and run:
+
+```bash
+npm start
+```
+
+This will start the Express server and allow the back-end to receive HTTP requests.
 
 - **Front-end**
 
