@@ -2,6 +2,8 @@
 
 Challenge in React and Node.js
 
+> This is a challenge by [Hubbi](https://app.hubbi.app/)
+
 ---
 
 # System Documentation
@@ -13,6 +15,17 @@ This system demonstrates the initial creation of a system for registering and vi
 - **Back-end**: The back-end is built with Node.js, Express, Prisma, and uses a PostgreSQL database. It provides APIs for uploading financial transaction files, storing these transactions in the database, and providing access to transaction data. The back-end application is contained in the `api` folder.
 
 - **Front-end**: The front-end is built with React and uses the Ant Design (antd) framework for the user interface. It communicates with the back-end through Axios to upload files and to retrieve and display transactions registered in the database. The front-end application is contained in the `public` folder.
+
+## List of Technologies Used
+
+- Node.js
+- Express
+- Docker
+- Postgres
+- Prisma
+- React
+- Axios
+- AntDesign
 
 ## Environment Setup
 
@@ -77,6 +90,67 @@ React will start and be accessible at `http://localhost:3000`.
 After following the setup steps above, you can use the application as follows:
 
 1. AAccess the front-end at `http://localhost:3000` in your web browser.
+
+## API Documentation
+
+### List All Transactions
+
+- Method: GET
+- URL: /transactions
+- Description: Returns all transactions registered in the system.
+- Success Response:
+  - Code: 200 OK
+  - Sample Response:
+  ```json
+  "message": "Transactions loaded successfully.",
+  "transactions": [
+  {
+    "id": 1,
+    "type": 1,
+    "date": "2022-01-15T19:20:30-03:00",
+    "product": "WELLNESS COURSE",
+    "value": 12750,
+    "seller": "JOSE CARLOS"
+  },
+  // Other transactions...
+  ]
+  ```
+- Error Response:
+  - Code: 500 Internal Server Error
+  - Sample Response:
+    ```json
+    "message": "Transactions loaded successfully.",
+    ```
+
+### Upload Transaction File
+
+- Method: POST
+- URL: /upload
+- Description: Uploads a file of financial transactions to be processed and stored in the system.
+- Request Body: The file must be sent as a form field with the name "file."
+- Success Response:
+  - Code: 201 Created
+  - Sample Response:
+  ```json
+  "message": "Upload successfully completed.",
+  "transactions": [
+  {
+    "id": 1,
+    "type": 1,
+    "date": "2022-01-15T19:20:30-03:00",
+    "product": "WELLNESS COURSE",
+    "value": 12750,
+    "seller": "JOSE CARLOS"
+  },
+  // Other transactions...
+  ]
+  ```
+- Error Response:
+  - Code: 400 Bad Request
+  - Sample Response:
+    ```json
+    "message": "No file found in the request.",
+    ```
 
 ---
 
