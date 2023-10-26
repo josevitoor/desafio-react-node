@@ -13,19 +13,21 @@ const AppStore = () => {
     onChange(info) {
       if (info.file.status === "done") {
         showNotification("success", "", "Upload Realizado com Sucesso");
-        getTransactions();
+        getTransactions(true);
       } else if (info.file.status === "error") {
         showNotification("error", "", "Erro ao Realizar Upload do Arquivo");
       }
     },
   };
 
-  async function getTransactions() {
+  async function getTransactions(showMessage = false) {
     try {
       const response = await fetch("http://localhost:3333/transactions");
       const data = await response.json();
-      setTransactions(data);
-      setSum(sumValues(data));
+      const transactions = data && data.transactions ? data.transactions : [];
+      setTransactions(transactions);
+      setSum(sumValues(transactions));
+      showMessage && showNotification("success", "", data.message);
     } catch (error) {
       showNotification("error", "", "Erro ao Carregar as Transações");
     }
