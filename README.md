@@ -57,7 +57,7 @@ docker-compose up -d
 
 The PostgreSQL database will be accessible on port 5432.
 
-3. In the `api`, use the command below to create Prisma Migrations:
+3. In the `api` folder, use the command below to create Prisma Migrations:
 
 ```bash
 npx prisma migrate dev
@@ -65,7 +65,7 @@ npx prisma migrate dev
 
 This will ensure that the tables are created according to the Prisma model file (schema.prisma).
 
-4. In the `api`, folder, run the following command to start Prisma Studio:
+4. In the `api` folder, run the following command to start Prisma Studio:
 
 ```bash
 npx prisma studio
@@ -97,7 +97,7 @@ React will start and be accessible at `http://localhost:3000`.
 
 After following the setup steps above, you can use the application as follows:
 
-1. AAccess the front-end at `http://localhost:3000` in your web browser.
+1. Access the front-end at `http://localhost:3000` in your web browser.
 
 ## API Documentation
 
@@ -127,7 +127,7 @@ After following the setup steps above, you can use the application as follows:
   - Code: 500 Internal Server Error
   - Sample Response:
     ```json
-    "message": "Transactions loaded successfully.",
+    "message": "Error on load Transactions.",
     ```
 
 ### Upload Transaction File
