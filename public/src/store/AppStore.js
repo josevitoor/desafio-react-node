@@ -12,10 +12,10 @@ const AppStore = () => {
     action: "http://localhost:3333/upload",
     onChange(info) {
       if (info.file.status === "done") {
-        showNotification("success", "", "Upload successfully.");
+        showNotification("success", "", "Upload Realizado com Sucesso");
         getTransactions();
       } else if (info.file.status === "error") {
-        showNotification("error", "", "Error when uploading the file.");
+        showNotification("error", "", "Erro ao Realizar Upload do Arquivo");
       }
     },
   };
@@ -27,7 +27,7 @@ const AppStore = () => {
       setTransactions(data);
       setSum(sumValues(data));
     } catch (error) {
-      showNotification("error", "", "Error when loading transactions.");
+      showNotification("error", "", "Erro ao Carregar as Transações");
     }
   }
 

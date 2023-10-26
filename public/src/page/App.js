@@ -11,7 +11,7 @@ import {
 } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 import { formatDate, formatValueInReal, getByKey } from "../utils/utils";
-import DadosEstaticos from "../utils/dadosEstaticos";
+import staticData from "../utils/staticData";
 import AppStore from "../store/AppStore";
 
 const { Title } = Typography;
@@ -23,7 +23,7 @@ const App = () => {
       title: "Tipo",
       dataIndex: "type",
       key: "type",
-      render: (text) => getByKey(DadosEstaticos.getTipo(), text),
+      render: (text) => getByKey(staticData.getTipo(), text),
     },
     {
       title: "Data",
@@ -56,7 +56,7 @@ const App = () => {
         <Divider style={{ marginTop: "50px" }} />
         <Row gutter={16}>
           <Typography>
-            <Title>Amount: {formatValueInReal(store.sum)}</Title>
+            <Title>Valor Total: {formatValueInReal(store.sum)}</Title>
           </Typography>
         </Row>
         <Row gutter={16}>
