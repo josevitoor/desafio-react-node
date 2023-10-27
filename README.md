@@ -57,7 +57,15 @@ docker-compose up -d
 
 The PostgreSQL database will be accessible on port 5432.
 
-3. In the `api` folder, run the following command to start Prisma Studio:
+3. In the `api` folder, use the command below to create Prisma Migrations:
+
+```bash
+npx prisma migrate dev
+```
+
+This will ensure that the tables are created according to the Prisma model file (schema.prisma).
+
+4. In the `api` folder, run the following command to start Prisma Studio (optional):
 
 ```bash
 npx prisma studio
@@ -154,7 +162,7 @@ After following the setup steps above, you can use the application as follows:
 
 ---
 
-# Comitts
+# Commits
 
 - initial api setup: Initializing the project by creating an 'api' folder where the Node.js backend implementation will take place. Additionally, I performed the initial installation of the key tools I would use for this: node, nodemon, express, Docker configuration, and the beginning of the PostgreSQL database setup.
 
