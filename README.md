@@ -57,15 +57,7 @@ docker-compose up -d
 
 The PostgreSQL database will be accessible on port 5432.
 
-3. In the `api` folder, use the command below to create Prisma Migrations:
-
-```bash
-npx prisma migrate dev
-```
-
-This will ensure that the tables are created according to the Prisma model file (schema.prisma).
-
-4. In the `api` folder, run the following command to start Prisma Studio:
+3. In the `api` folder, run the following command to start Prisma Studio:
 
 ```bash
 npx prisma studio
