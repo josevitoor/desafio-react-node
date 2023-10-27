@@ -33,71 +33,41 @@ To run the application on your machine, follow the steps below:
 
 ### Prerequisites
 
-- Node.js and npm: Make sure you have Node.js and npm installed on your machine.
-- Docker: You need to have Docker installed to run the PostgreSQL database..
+- Docker: You need to have Docker installed and running on your computer to start the containers.
 
-### Installing Dependencies
+### Starting the Project
 
-In the project's root directory, navigate to the `api` and `public` folders and run the following command to install dependencies:
-
-```bash
-npm install
-```
-
-### Initialization
-
-- **Database**
-
-1. Ensure that Docker is running.
-2. In the `api` folder, run the following command to start the PostgreSQL database using Docker Compose:
+1. To initiate the project, navigate to the root folder and use the following command to have all containers downloaded:
 
 ```bash
 docker-compose up -d
 ```
 
-The PostgreSQL database will be accessible on port 5432.
-
-3. In the `api` folder, use the command below to create Prisma Migrations:
+2. Once all containers have been downloaded, use the command to create an interactive shell within the container.:
 
 ```bash
-npx prisma migrate dev
+docker exec -it my-node-app sh
 ```
 
-This will ensure that the tables are created according to the Prisma model file (schema.prisma).
-
-4. In the `api` folder, run the following command to start Prisma Studio (optional):
+3. With the shell created, simply use the command to apply the Prisma migration.
 
 ```bash
-npx prisma studio
+npx prisma migrate dev --name Transactions
 ```
 
-Prisma Studio will open a graphical interface that allows you to view, edit, and manage database data, if preferred.
-
-- **Back-end**
-
-1. To start the back-end, go to the `api` folder and run:
+4. Finally, just exit the interactive shell using the command
 
 ```bash
-npm start
+exit
 ```
 
-This will start the Express server and allow the back-end to receive HTTP requests.
-
-- **Front-end**
-
-1. To start the front-end, go to the `public` folder and run:
-
-```bash
-npm start
-```
-
-React will start and be accessible at `http://localhost:3000`.
+Now the project is ready for use.
 
 ### System Usage
 
 After following the setup steps above, you can use the application as follows:
 
-1. Access the front-end at `http://localhost:3000` in your web browser.
+1. Access the system at `http://localhost:3000` in your web browser.
 
 ## API Documentation
 
@@ -173,3 +143,5 @@ After following the setup steps above, you can use the application as follows:
 - bringing the amount: Bringing the total value of all transactions made and adjusting some architectural points for better development.
 
 - feedback messages: Bringing some user feedback messages and reorganizing some folders.
+
+- implementing docker: Using Docker to quickly set up the API and frontend.

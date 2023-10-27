@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { showNotification } from "../utils/utils";
 
 const AppStore = () => {
-  const port = process.env.PORT || 3333;
   const [transactions, setTransactions] = useState([]);
   const [sum, setSum] = useState(0);
 
@@ -10,7 +9,7 @@ const AppStore = () => {
     name: "file",
     accept: ".txt",
     multiple: false,
-    action: `http://localhost:${port}/upload`,
+    action: `http://localhost:3333/upload`,
     onChange(info) {
       if (info.file.status === "done") {
         showNotification("success", "", "Upload Realizado com Sucesso");
@@ -23,7 +22,7 @@ const AppStore = () => {
 
   async function getTransactions(showMessage = false) {
     try {
-      const response = await fetch(`http://localhost:${port}/transactions`);
+      const response = await fetch(`http://localhost:3333/transactions`);
       const data = await response.json();
       const transactions = data && data.transactions ? data.transactions : [];
       setTransactions(transactions);
