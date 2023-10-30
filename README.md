@@ -33,7 +33,7 @@ To run the application on your machine, follow the steps below:
 
 ### Prerequisites
 
-- Npm: Make sure you have npm installed on your machine with version >= 16.13.2 to install dependencies.
+- Node: Make sure you have npm installed on your machine with version >= 16.13.2 to install dependencies.
 - Docker: You need to have Docker installed and running on your computer to start the containers.
 
 ### Installing Dependencies
@@ -41,7 +41,7 @@ To run the application on your machine, follow the steps below:
 In the project's root directory, navigate to the `api` and `public` folders and run the following command to install dependencies:
 
 ```bash
-npm install
+yarn install
 ```
 
 ### Starting the Project

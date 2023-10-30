@@ -2,12 +2,12 @@ FROM node:16.13.2
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY package.json yarn.lock ./
 
-RUN npm install
+RUN yarn install
 
 COPY . .
 
 EXPOSE 3333
 
-CMD ["npm", "start"]
+CMD ["yarn", "start"]
